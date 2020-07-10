@@ -8,7 +8,10 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
    
-    [Header("Settings")]
+    [Header("Current Mode")]
+    private GameMode currentGameMode;
+    private enum GameMode {Debug, Test_Load};
+    [Header("Game Settings")]
     [SerializeField] private Difficulty difficultySetting; //The current Level's Difficulty
     [SerializeField] private GameSpeed gameSpeedSetting; //The current Level's platform speed
 
@@ -35,40 +38,69 @@ public class GameManager : MonoBehaviour
         
         instance = this;
         //Makes random selection of a Level Layout before Generating it
-        LoadAvailableLevels();
-        LoadLevelLayout();
-        availableLevels = new LevelPool(1);
-        for (int i = 0; i < 1; i++)
-        {
-            availableLevels.levels[i] = levelSelected;
+        LoadLevelsFromFile();
+        if(currentGameMode == GameMode.Test_Load){
+            //SelectRandomLevel();
+            //LoadLevelLayout();
         }
-        
          
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     /* Loads the avaiable level information from a JSON File 
     into the serializable object*/
-    public void LoadAvailableLevels(){
-        string path = "Assets/LevelPoolTest.txt";
-        string[] json = File.ReadAllLines(path);
-        availableLevels = JsonUtility.FromJson<LevelPool>(json[0]);
-        levelSelected = availableLevels.levels[0];
+    public void LoadLevelsFromFile(){
+        string path = "Assets/Levels/LevelPoolTest.txt";
+        string[] json = null;
+        if(File.Exists(path)){
+            json = File.ReadAllLines(path);
+        }else{
+            Debug.Log("No hay un archivo disponible, creando...");
+            File.Create(path);
+        }
+        if(json.Length > 0){
+            availableLevels = JsonUtility.FromJson<LevelPool>(json[0]);
+            Debug.Log("There's " + GetAvailableLevels().Length +
+             " Available Levels from a Total of "+availableLevels.levels.Count+" Levels");
+        }else{
+            /*levelSelected = new LayoutSettings(); //Default
+            availableLevels = new LevelPool();
+            availableLevels.levels.Add(levelSelected);*/
+        }
+        
+    }
+
+    public void ResetField(){
+        for(int i = 0; i < platformReferences.Count; i++){
+            Destroy(platformReferences[i]);
+        }
+        platformReferences.RemoveRange(0, platformReferences.Count);
+        levelSelected = null;
+    }
+
+    public void DeleteLevel(LayoutSettings level){
+        bool found = false;
+        for(int i = 0; i < availableLevels.levels.Count; i++){
+            if(availableLevels.levels[i] == level && availableLevels.levels[i].active){
+                found = true;
+                availableLevels.levels[i].active = false;
+                Debug.Log("Level Deleted");
+                if(levelSelected == level){
+                    ResetField();
+                }
+            }
+        }
+        if(!found){
+            Debug.Log("Level Not Found");
+        }
+        
     }
 
     public void SaveOnce(){
-        string path = "Assets/LevelPoolTest.txt";
+        string path = "Assets/Levels/LevelPoolTest.txt";
         Debug.Log(path);
-        LevelPool ots = availableLevels;
-        string json = JsonUtility.ToJson(ots);
-        File.WriteAllText(path, json);
-        
-       // Debug.Log("The json string is: "+json);
+        LevelPool objectToSave = availableLevels;
+        string json = JsonUtility.ToJson(objectToSave);
+        File.WriteAllText(path, json);   
     }
 
     /* Selects a level information at random from the avaiable levels
@@ -77,6 +109,9 @@ public class GameManager : MonoBehaviour
 
         //////////////////////////////////Random level selection goes here
         //currentSpeed = speedValues[(int) gameSpeedSetting]; //Sets Spped
+        if(currentGameMode == GameMode.Debug){
+            HeaderLevelDetails.instance.FillDetails(levelSelected);
+        }
         difficultySetting = levelSelected.difficulty;
         gameSpeedSetting = levelSelected.gameSpeed;
         currentSpeed = speedValues[(int) levelSelected.gameSpeed];
@@ -114,17 +149,32 @@ public class GameManager : MonoBehaviour
                     g.AddComponent<MovingPlatform>().SetSettings(levelSelected.GetPlatformSettings(i));
                 }
                 g.transform.parent = stage.transform; 
+                platformReferences.Add(g);
                 i++;
            }
         }  
     }
 
-    
-    ///Stage Editor Methods (Debug only)
-    public void SetPlatformSetting(PlatformSettings ps){
-        
+    public void CreateNewLevel(LayoutSettings newLevel){
+        newLevel.layoutId = availableLevels.levels.Count + 1;
+        availableLevels.levels.Add(newLevel);
+        SetCurrentLevel(newLevel);
     }
 
+    ///Stage Editor Methods (Debug only)
+    public void SetCurrentLevel(LayoutSettings level){
+        if(levelSelected != level){
+            ResetField();
+            levelSelected = level;
+            LoadLevelLayout();
+        }else{
+            Debug.Log("This level is currently Open");
+        }
+    }
+
+    public LayoutSettings GetCurrentLevel(){
+        return levelSelected;
+    }
     public float GetXOffset(){
         return platformXOffset;
     }
@@ -135,6 +185,16 @@ public class GameManager : MonoBehaviour
 
     public float GetCurrentSpeed(){
         return currentSpeed;
+    }
+
+    public LayoutSettings[] GetAvailableLevels(){
+        List<LayoutSettings> availableList = new List<LayoutSettings>();
+        for(int i = 0; i < availableLevels.levels.Count; i++){
+            if(availableLevels.levels[i].active){
+                availableList.Add(availableLevels.levels[i]);
+            }
+        }
+        return availableList.ToArray();
     }
 
 }

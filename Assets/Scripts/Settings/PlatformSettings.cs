@@ -16,6 +16,15 @@ public class PlatformSettings {
     [Header("Object Attached (Optional)")]
     [SerializeField] private PlatformObjectIndex objectAttached;
 
+    public PlatformSettings(){
+        platformType = PlatformType.Normal;
+        directionToChange = Direction.Up; //Not used if the platform is not a DirectionChanger
+        isMovable = false;
+        unitsToMove = 0;
+        directionToMove = Direction.Up;
+        objectAttached = PlatformObjectIndex.None;
+
+    }
     public PlatformSettings(PlatformType pt, Direction d, bool im, Direction dtm, PlatformObjectIndex poi){
 
         platformType = pt;

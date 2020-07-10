@@ -77,6 +77,17 @@ public class MovingPlatform : Platform {
         unitsToMove = ps.GetUnitsToMove();
         directionToMove = ps.GetDirectionToMove();
         speed = GameManager.instance.GetCurrentSpeed();
+        switch(unitsToMove){
+
+            case 2:
+                speed = speed + (0.25f * speed);
+                break;
+
+            case 3:
+                speed = speed + (0.75f * speed); 
+                break;
+        }
+        
         
         switch(directionToMove){
 
