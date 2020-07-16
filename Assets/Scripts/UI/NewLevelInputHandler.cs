@@ -13,6 +13,7 @@ public class NewLevelInputHandler : MonoBehaviour
 
     [SerializeField] private string[] difficultyTextOptions = {"Fácil", "Normal", "Difícil"};
     [SerializeField] private string[] speedTextOptions = {"Lenta", "Normal", "Rápida", "Insana"};
+    private LayoutSettings levelInfo;
     void Start() {
 
         difficultyDropdown.options.Clear();
@@ -32,19 +33,38 @@ public class NewLevelInputHandler : MonoBehaviour
 
     public void CreateNewLevel(){
 
-        LayoutSettings newLevel = new LayoutSettings();
+        levelInfo = new LayoutSettings();
+        levelInfo.difficulty = (Difficulty) difficultyDropdown.value;
+        levelInfo.gameSpeed = (GameSpeed) speedDropdown.value;
+        levelInfo.description = descrptionInputField.text;
 
-        newLevel.difficulty = (Difficulty) difficultyDropdown.value;
-        newLevel.gameSpeed = (GameSpeed) speedDropdown.value;
-        newLevel.description = descrptionInputField.text;
-
-        GameManager.instance.CreateNewLevel(newLevel);
+        GameManager.instance.CreateNewLevel(levelInfo);
     }
 
+    public void FillWithLevelDetails(){
+        levelInfo = GameManager.instance.GetCurrentLevel();
+
+        difficultyDropdown.value = (int) levelInfo.difficulty;
+        speedDropdown.value = (int) levelInfo.gameSpeed;
+        if(levelInfo.description == ""){
+            descrptionInputField.text = "";
+        }else{
+            descrptionInputField.text = levelInfo.description;
+        }
+    }
+
+    public void EditLevel(){
+
+        levelInfo.difficulty = (Difficulty) difficultyDropdown.value;
+        levelInfo.gameSpeed = (GameSpeed) speedDropdown.value;
+        levelInfo.description = descrptionInputField.text;
+
+        GameManager.instance.ModifyLevelDetails(levelInfo);
+    }
     public void ResetInputs(){
         difficultyDropdown.value = 0;
         speedDropdown.value = 0;
-        descrptionInputField.text = placeHolderText.text; 
+        descrptionInputField.text = ""; 
     }
 
 }

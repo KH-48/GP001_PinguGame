@@ -10,6 +10,8 @@ public class DirectionChangerPlatform : Platform
     
     public override void SetSettings(PlatformSettings ps){
         
+        settings = ps;
+        
         newDirection = ps.GetDirectionToChange();
 
         switch(newDirection){

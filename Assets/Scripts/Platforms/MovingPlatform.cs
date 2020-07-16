@@ -74,6 +74,8 @@ public class MovingPlatform : Platform {
 
     public override void SetSettings(PlatformSettings ps){
 
+        settings = ps;
+        
         unitsToMove = ps.GetUnitsToMove();
         directionToMove = ps.GetDirectionToMove();
         speed = GameManager.instance.GetCurrentSpeed();

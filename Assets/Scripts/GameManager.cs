@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
-   
+    public GameObject platformInfo;
     [Header("Current Mode")]
     private GameMode currentGameMode;
     private enum GameMode {Debug, Test_Load};
@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         
         instance = this;
         //Makes random selection of a Level Layout before Generating it
+        HeaderLevelDetails.instance.FillDetails(new LayoutSettings());
         LoadLevelsFromFile();
         if(currentGameMode == GameMode.Test_Load){
             //SelectRandomLevel();
@@ -46,9 +47,29 @@ public class GameManager : MonoBehaviour
          
     }
 
+    void Update(){
+        if (Input.GetMouseButtonDown (0)) {
+         RaycastHit hit;
+         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+         if(Physics.Raycast (ray, out hit)){
+             if(hit.transform.tag == "Platform"){
+                 for(int i = 0; i < platformReferences.Count; i++){
+                     if(platformReferences[i] == hit.transform.gameObject){
+                        Debug.Log ("Platform "+ i
+                        +" Selected");
+                        platformInfo.SetActive(true);
+                        PlatformInfoPanelHandler.instance.FillValues(i,levelSelected.layoutPlatforms[i]);
+                     }
+                 }
+             }
+        }
+        }
+    }
+
     /* Loads the avaiable level information from a JSON File 
     into the serializable object*/
     public void LoadLevelsFromFile(){
+        
         string path = "Assets/Levels/LevelPoolTest.txt";
         string[] json = null;
         if(File.Exists(path)){
@@ -61,10 +82,6 @@ public class GameManager : MonoBehaviour
             availableLevels = JsonUtility.FromJson<LevelPool>(json[0]);
             Debug.Log("There's " + GetAvailableLevels().Length +
              " Available Levels from a Total of "+availableLevels.levels.Count+" Levels");
-        }else{
-            /*levelSelected = new LayoutSettings(); //Default
-            availableLevels = new LevelPool();
-            availableLevels.levels.Add(levelSelected);*/
         }
         
     }
@@ -75,24 +92,6 @@ public class GameManager : MonoBehaviour
         }
         platformReferences.RemoveRange(0, platformReferences.Count);
         levelSelected = null;
-    }
-
-    public void DeleteLevel(LayoutSettings level){
-        bool found = false;
-        for(int i = 0; i < availableLevels.levels.Count; i++){
-            if(availableLevels.levels[i] == level && availableLevels.levels[i].active){
-                found = true;
-                availableLevels.levels[i].active = false;
-                Debug.Log("Level Deleted");
-                if(levelSelected == level){
-                    ResetField();
-                }
-            }
-        }
-        if(!found){
-            Debug.Log("Level Not Found");
-        }
-        
     }
 
     public void SaveOnce(){
@@ -154,12 +153,7 @@ public class GameManager : MonoBehaviour
            }
         }  
     }
-
-    public void CreateNewLevel(LayoutSettings newLevel){
-        newLevel.layoutId = availableLevels.levels.Count + 1;
-        availableLevels.levels.Add(newLevel);
-        SetCurrentLevel(newLevel);
-    }
+    
 
     ///Stage Editor Methods (Debug only)
     public void SetCurrentLevel(LayoutSettings level){
@@ -172,7 +166,51 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void CreateNewLevel(LayoutSettings newLevel){
+        newLevel.layoutId = availableLevels.levels.Count + 1;
+        availableLevels.levels.Add(newLevel);
+        SetCurrentLevel(newLevel);
+    }
+
+    public void ModifyLevelDetails(LayoutSettings newDetails){
+      
+        for(int i = 0; i < availableLevels.levels.Count; i++){
+            if(availableLevels.levels[i].layoutId == newDetails.layoutId){
+                int currentId = availableLevels.levels[i].layoutId;
+                availableLevels.levels[i] = newDetails;
+                availableLevels.levels[i].layoutId = currentId;
+                SetCurrentLevel(availableLevels.levels[i]);
+                break;
+            }
+        }
+
+    }
+
+    public void DeleteLevel(LayoutSettings level){
+        bool found = false;
+        for(int i = 0; i < availableLevels.levels.Count; i++){
+            if(availableLevels.levels[i] == level && availableLevels.levels[i].active){
+                found = true;
+                availableLevels.levels[i].active = false;
+                HeaderLevelDetails.instance.FillDetails(new LayoutSettings());
+                Debug.Log("Level Deleted");
+                if(levelSelected == level){
+                    ResetField();
+                }
+            }
+        }
+        if(!found){
+            Debug.Log("Level Not Found");
+        }
+        
+    }
+
+    //////////////Getters / Setters
+
     public LayoutSettings GetCurrentLevel(){
+        if(levelSelected == null){
+            //return new LayoutSettings();
+        }
         return levelSelected;
     }
     public float GetXOffset(){
