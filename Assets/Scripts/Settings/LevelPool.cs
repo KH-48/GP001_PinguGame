@@ -5,8 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class LevelPool 
 {
-    //public LayoutSettings[] levels;
-    public List<LayoutSettings> levels = new List<LayoutSettings>();
+    //public LevelSettings[] levels;
+    public List<LevelSettings> levels = new List<LevelSettings>();
 
     public LevelPool(){
         

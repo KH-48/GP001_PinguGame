@@ -29,8 +29,12 @@ public class GameManager : MonoBehaviour
 
     [Header("Level Layouts")]
     private LevelPool availableLevels; //A reference to all the possible platform combinations the stage can have. Stored on a JSON File.
-    [SerializeField] private LayoutSettings levelSelected; //The platform combination selected from the available levels
+    [SerializeField] private LevelSettings levelSelected = null; //The platform combination selected from the available levels
     private List<GameObject> platformReferences = new List<GameObject>();
+    [SerializeField] private int selectedPlatformIndex;
+    private Vector3[] platformPositions = new Vector3[16];
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +42,7 @@ public class GameManager : MonoBehaviour
         
         instance = this;
         //Makes random selection of a Level Layout before Generating it
-        HeaderLevelDetails.instance.FillDetails(new LayoutSettings());
+        //HeaderLevelDetails.instance.FillDetails(new LevelSettings());
         LoadLevelsFromFile();
         if(currentGameMode == GameMode.Test_Load){
             //SelectRandomLevel();
@@ -48,21 +52,21 @@ public class GameManager : MonoBehaviour
     }
 
     void Update(){
-        if (Input.GetMouseButtonDown (0)) {
+        if (Input.GetMouseButtonDown (1)) {
          RaycastHit hit;
          Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
          if(Physics.Raycast (ray, out hit)){
-             if(hit.transform.tag == "Platform"){
+                if(hit.transform.tag == "Platform"){
                  for(int i = 0; i < platformReferences.Count; i++){
-                     if(platformReferences[i] == hit.transform.gameObject){
-                        Debug.Log ("Platform "+ i
-                        +" Selected");
-                        platformInfo.SetActive(true);
-                        PlatformInfoPanelHandler.instance.FillValues(i,levelSelected.layoutPlatforms[i]);
+                        if(platformReferences[i] == hit.transform.gameObject){
+                            Debug.Log ("Platform "+ i +" Selected");
+                            platformInfo.SetActive(true);
+                            PlatformInfoPanelHandler.instance.FillValues(i,levelSelected.layoutPlatforms[i]);
+                            selectedPlatformIndex = i;
+                        }
                      }
-                 }
-             }
-        }
+                }
+            }
         }
     }
 
@@ -123,15 +127,12 @@ public class GameManager : MonoBehaviour
         for(float row = platformsOrigin.x; row <= platformXLimit; row += platformXOffset){ 
            for(float column = platformsOrigin.z; column <= platformZLimit; column += platformZOffset){
 
-                /*If there is nothing to instantiate in this spot, the loop
-                 continues to the next iterateration*/
-                if(levelSelected.GetPlatformType(i) == PlatformType.None){  
-                         i++;
-                        continue;
-                }
-
+                platformPositions[i] = new Vector3(row, platformsOrigin.y, column);
+        
+                
                 /*The Manager creates a platform based on the platform types's enum value, 
                 interpreting it as an index from its array of platforms*/
+                
                 GameObject g = Instantiate(platformPool[(int) levelSelected.GetPlatformType(i)],
                 new Vector3(row,platformsOrigin.y,column),Quaternion.identity);
                 g.transform.localScale = platformsScale;
@@ -156,7 +157,7 @@ public class GameManager : MonoBehaviour
     
 
     ///Stage Editor Methods (Debug only)
-    public void SetCurrentLevel(LayoutSettings level){
+    public void SetCurrentLevel(LevelSettings level){
         if(levelSelected != level){
             ResetField();
             levelSelected = level;
@@ -166,33 +167,40 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CreateNewLevel(LayoutSettings newLevel){
+    public void ResetLevel(){
+        LevelSettings level = levelSelected;
+        ResetField();
+        levelSelected = level;
+        LoadLevelLayout();
+    }
+
+    public void CreateNewLevel(LevelSettings newLevel){
         newLevel.layoutId = availableLevels.levels.Count + 1;
         availableLevels.levels.Add(newLevel);
         SetCurrentLevel(newLevel);
     }
 
-    public void ModifyLevelDetails(LayoutSettings newDetails){
+    public void ModifyLevelDetails(LevelSettings newDetails){
       
         for(int i = 0; i < availableLevels.levels.Count; i++){
             if(availableLevels.levels[i].layoutId == newDetails.layoutId){
                 int currentId = availableLevels.levels[i].layoutId;
                 availableLevels.levels[i] = newDetails;
                 availableLevels.levels[i].layoutId = currentId;
-                SetCurrentLevel(availableLevels.levels[i]);
+                ResetLevel();
                 break;
             }
         }
 
     }
 
-    public void DeleteLevel(LayoutSettings level){
+    public void DeleteLevel(LevelSettings level){
         bool found = false;
         for(int i = 0; i < availableLevels.levels.Count; i++){
             if(availableLevels.levels[i] == level && availableLevels.levels[i].active){
                 found = true;
                 availableLevels.levels[i].active = false;
-                HeaderLevelDetails.instance.FillDetails(new LayoutSettings());
+                HeaderLevelDetails.instance.FillDetails(new LevelSettings());
                 Debug.Log("Level Deleted");
                 if(levelSelected == level){
                     ResetField();
@@ -205,9 +213,42 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void CreateNewPlatform(PlatformSettings newPlatformSettings){
+        if(platformReferences[selectedPlatformIndex] != null){
+
+            Vector3 position = platformPositions[selectedPlatformIndex];
+            Destroy(platformReferences[selectedPlatformIndex]);
+            
+            /*The Manager creates a platform based on the platform types's enum value, 
+                interpreting it as an index from its array of platforms*/
+            GameObject g = Instantiate(platformPool[(int) newPlatformSettings.GetPlatformType()],
+            position,Quaternion.identity);
+            g.transform.localScale = platformsScale;
+
+                //NOTE: Add Object Attached (make g a parent of said object if aplicable)
+
+                //Set the corresponding properties of the platform specified in the config file
+            if(newPlatformSettings.GetPlatformType() == PlatformType.DirectionChanger){
+                g.GetComponent<DirectionChangerPlatform>().SetSettings(newPlatformSettings); 
+            }
+                
+            //Add the Moving Platform's properties to the created platform if aplicable
+            if(newPlatformSettings.IsThePlatformMovable()){
+                g.AddComponent<MovingPlatform>().SetSettings(newPlatformSettings);
+            }
+            g.transform.parent = stage.transform; 
+            platformReferences[selectedPlatformIndex] = g;
+
+            levelSelected.layoutPlatforms[selectedPlatformIndex] = newPlatformSettings;
+
+        }else{
+            Debug.Log("There is no Platform Selected");
+        }
+    }
+
     //////////////Getters / Setters
 
-    public LayoutSettings GetCurrentLevel(){
+    public LevelSettings GetCurrentLevel(){
         if(levelSelected == null){
             //return new LayoutSettings();
         }
@@ -225,14 +266,30 @@ public class GameManager : MonoBehaviour
         return currentSpeed;
     }
 
-    public LayoutSettings[] GetAvailableLevels(){
-        List<LayoutSettings> availableList = new List<LayoutSettings>();
+    public LevelSettings[] GetAvailableLevels(){
+        List<LevelSettings> availableList = new List<LevelSettings>();
         for(int i = 0; i < availableLevels.levels.Count; i++){
             if(availableLevels.levels[i].active){
                 availableList.Add(availableLevels.levels[i]);
             }
         }
         return availableList.ToArray();
+    }
+
+    public void StopPlatforms(){
+        for(int i = 0; i < platformReferences.Count; i++){
+            if(levelSelected.layoutPlatforms[i].IsThePlatformMovable()){
+                platformReferences[i].GetComponent<MovingPlatform>().StopMoving();
+            }
+        }
+    }
+
+    public void MovePlatforms(){
+        for(int i = 0; i < platformReferences.Count; i++){
+            if(levelSelected.layoutPlatforms[i].IsThePlatformMovable()){
+                platformReferences[i].GetComponent<MovingPlatform>().StartMoving();
+            }
+        }
     }
 
 }

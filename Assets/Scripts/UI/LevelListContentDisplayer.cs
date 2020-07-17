@@ -15,7 +15,7 @@ public class LevelListContentDisplayer : MonoBehaviour
     }
 
     public void DisplayList(){
-        LayoutSettings[] levelsToDisplay = GameManager.instance.GetAvailableLevels();
+        LevelSettings[] levelsToDisplay = GameManager.instance.GetAvailableLevels();
         for(int i = 0; i < levelsToDisplay.Length; i++){
             GameObject details = Instantiate(levelDetails, transform);
             details.GetComponent<LevelDetails>().FillDetails(levelsToDisplay[i]);

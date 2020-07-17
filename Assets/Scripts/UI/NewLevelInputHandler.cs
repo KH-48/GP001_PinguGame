@@ -13,7 +13,8 @@ public class NewLevelInputHandler : MonoBehaviour
 
     [SerializeField] private string[] difficultyTextOptions = {"Fácil", "Normal", "Difícil"};
     [SerializeField] private string[] speedTextOptions = {"Lenta", "Normal", "Rápida", "Insana"};
-    private LayoutSettings levelInfo;
+    private LevelSettings levelInfo;
+    
     void Start() {
 
         difficultyDropdown.options.Clear();
@@ -33,7 +34,7 @@ public class NewLevelInputHandler : MonoBehaviour
 
     public void CreateNewLevel(){
 
-        levelInfo = new LayoutSettings();
+        levelInfo = new LevelSettings();
         levelInfo.difficulty = (Difficulty) difficultyDropdown.value;
         levelInfo.gameSpeed = (GameSpeed) speedDropdown.value;
         levelInfo.description = descrptionInputField.text;

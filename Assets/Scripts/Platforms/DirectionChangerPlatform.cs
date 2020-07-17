@@ -30,6 +30,7 @@ public class DirectionChangerPlatform : Platform
             break;
         }   
          this.gameObject.transform.eulerAngles = new Vector3(0,orientation,0);
+         initialPosition = transform.position;
     }
 
 

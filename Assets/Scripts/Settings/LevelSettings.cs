@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 
 [System.Serializable]
-public class LayoutSettings {
+public class LevelSettings {
     
     public bool active=true;
     public int layoutId;
@@ -11,7 +11,7 @@ public class LayoutSettings {
     public PlatformSettings[] layoutPlatforms;
     public string description;
     
-    public LayoutSettings(){
+    public LevelSettings(){
         layoutPlatforms = new PlatformSettings[16]; //Initialize
         for(int i=0;i<layoutPlatforms.Length; i++){
             layoutPlatforms[i] = new PlatformSettings();

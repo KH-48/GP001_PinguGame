@@ -78,16 +78,48 @@ public class PlatformInfoPanelHandler : MonoBehaviour
 
     public void UpdatePanels(){
 
-        if(platformType.value == 1){ //Activate Direction-changer Settings Panel
-            directionToChangePanel.SetActive(true);
-        }else{
-            directionToChangePanel.SetActive(false);
+    
+        switch(platformType.value){ 
+
+            case 0:
+                isMovable.gameObject.SetActive(true);
+                directionToChangePanel.SetActive(false);
+                objectAttached.gameObject.SetActive(true);
+                break;
+
+            case 1: //Activate Direction-changer Settings Panel
+                isMovable.gameObject.SetActive(true);
+                directionToChangePanel.SetActive(true);
+                objectAttached.gameObject.SetActive(false);
+                break;
+
+            case 2: //If 'None' is selected, deactivate all options
+
+                isMovable.gameObject.SetActive(false);
+                directionToChangePanel.SetActive(false);
+                objectAttached.gameObject.SetActive(false);
+                break;
         }
 
-        if(isMovable.isOn){ //Activate Moving Platform Settings Panel
+        if(isMovable.isOn && platformType.value != 2){ //Activate Moving Platform Settings Panel
            directionToMovePanel.SetActive(true);
         }else{
+            isMovable.isOn = false;
            directionToMovePanel.SetActive(false);
         }
    }
+
+    public void CreateNewSettings(){
+        PlatformSettings newSettings = new PlatformSettings();
+        newSettings.SetPlatformType((PlatformType) platformType.value);
+        newSettings.SetMovable(isMovable.isOn);
+        newSettings.SetDirectionToChange((Direction) directionToChange.value);
+        newSettings.SetDirectionToMove((Direction) directionToMove.value);
+        newSettings.SetUnitsToMove(unitsToMove.value + 1);
+        newSettings.SetObjectAttached((PlatformObjectIndex) objectAttached.value);
+
+        GameManager.instance.CreateNewPlatform(newSettings);
+        this.gameObject.SetActive(false);
+
+    }
 }

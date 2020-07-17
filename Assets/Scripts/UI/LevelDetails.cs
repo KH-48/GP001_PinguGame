@@ -7,14 +7,14 @@ using TMPro;
 public class LevelDetails : MonoBehaviour
 {
 
-    [SerializeField] protected LayoutSettings levelInfo;
+    [SerializeField] protected LevelSettings levelInfo;
     [SerializeField] protected TextMeshProUGUI idText;
     [SerializeField] protected TextMeshProUGUI difficultyText;
     [SerializeField] protected TextMeshProUGUI speedText;
     [SerializeField] protected TextMeshProUGUI descriptionText;
  
 
-    public virtual void FillDetails(LayoutSettings levelInfo){
+    public virtual void FillDetails(LevelSettings levelInfo){
         this.levelInfo = levelInfo;
         idText.text = ""+levelInfo.layoutId;
         switch(levelInfo.difficulty){

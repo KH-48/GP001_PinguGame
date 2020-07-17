@@ -9,10 +9,12 @@ public class HeaderLevelDetails : LevelDetails
     void Start()
     {
         instance = this;
-        FillDetails(GameManager.instance.GetCurrentLevel());
+        if(GameManager.instance.GetCurrentLevel() != null){
+            FillDetails(GameManager.instance.GetCurrentLevel());
+        }
     }
 
-    public override void FillDetails(LayoutSettings levelInfo){
+    public override void FillDetails(LevelSettings levelInfo){
         this.levelInfo = levelInfo;
         idText.text = ""+levelInfo.layoutId;
         switch(levelInfo.difficulty){

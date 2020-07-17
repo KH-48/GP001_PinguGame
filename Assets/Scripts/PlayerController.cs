@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
                         lastPosition = transform.position;
                         currentDirection = Direction.Up;
                         currentGameState = gameState.Resolving;
+                        GameManager.instance.StopPlatforms();
                     }
                 }
             break;
@@ -91,6 +92,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         transform.position = lastPosition;
         currentGameState = gameState.Controlling;
+        GameManager.instance.ResetLevel();
     }
 
     public void Respawn(){
