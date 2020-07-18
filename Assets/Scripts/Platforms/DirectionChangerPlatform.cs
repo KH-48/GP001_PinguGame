@@ -10,6 +10,8 @@ public class DirectionChangerPlatform : Platform
     
     public override void SetSettings(PlatformSettings ps){
         
+        settings = ps;
+        
         newDirection = ps.GetDirectionToChange();
 
         switch(newDirection){
@@ -28,6 +30,7 @@ public class DirectionChangerPlatform : Platform
             break;
         }   
          this.gameObject.transform.eulerAngles = new Vector3(0,orientation,0);
+         initialPosition = transform.position;
     }
 
 

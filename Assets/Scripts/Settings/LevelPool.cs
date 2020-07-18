@@ -5,9 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public class LevelPool 
 {
-    public LayoutSettings[] levels;
+    //public LevelSettings[] levels;
+    public List<LevelSettings> levels = new List<LevelSettings>();
 
-    public LevelPool(int length){
-        levels = new LayoutSettings[length];
+    public LevelPool(){
+        
     }
+
 }

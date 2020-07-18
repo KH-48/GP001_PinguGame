@@ -74,9 +74,22 @@ public class MovingPlatform : Platform {
 
     public override void SetSettings(PlatformSettings ps){
 
+        settings = ps;
+        
         unitsToMove = ps.GetUnitsToMove();
         directionToMove = ps.GetDirectionToMove();
         speed = GameManager.instance.GetCurrentSpeed();
+        switch(unitsToMove){
+
+            case 2:
+                speed = speed + (0.25f *speed);
+                break;
+
+            case 3:
+                speed = speed + (0.75f * speed); 
+                break;
+        }
+        
         
         switch(directionToMove){
 
@@ -101,6 +114,7 @@ public class MovingPlatform : Platform {
             break;
         }
         
+        initialPosition = transform.position;
         platformState = PlatformState.Moving;
         
     }
@@ -109,11 +123,11 @@ public class MovingPlatform : Platform {
 
     }
     
-    public void Stop(){
+    public void StopMoving(){
         platformState = PlatformState.Stopped;
     }
 
-    public void Move(){
+    public void StartMoving(){
         platformState = PlatformState.Moving;
     }
 }
