@@ -29,7 +29,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ListenInputs();   
+        ListenInputs();
+        if(transform.position.y < -20){
+            Respawn();
+        }
     }
 
     private void ListenInputs(){
