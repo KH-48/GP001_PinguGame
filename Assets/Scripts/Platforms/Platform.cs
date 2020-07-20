@@ -15,4 +15,11 @@ public abstract class Platform : MonoBehaviour
         return settings;
     }
 
+    private void OnCollisionEnter(Collision other) {
+        if(other.transform.name == "Player" && other.transform.position.y < 0.5){
+            PlayerController.instance.StopMoving();
+            Debug.Log("OH NO!!!");
+        }
+    }
+
 }

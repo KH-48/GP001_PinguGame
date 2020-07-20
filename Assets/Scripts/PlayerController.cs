@@ -61,8 +61,8 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Jump(){
-     //   Rb.velocity = Vector3.up * jumpTrust;
-       // jumping = true;
+          Rb.velocity = Vector3.up * jumpTrust;
+         // jumping = true;
     }
 
     public void MoveTo(Direction d){

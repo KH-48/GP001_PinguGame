@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     into the serializable object*/
     public void LoadLevelsFromFile(){
         
-        string path = "Assets/Levels/LevelPoolTest.txt";
+        string path = "Assets/Levels/LevelPoolTest.json";
         string[] json = null;
         if(File.Exists(path)){
             json = File.ReadAllLines(path);
@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void SaveOnce(){
-        string path = "Assets/Levels/LevelPoolTest.txt";
+        string path = "Assets/Levels/LevelPoolTest.json";
         Debug.Log(path);
         LevelPool objectToSave = availableLevels;
         string json = JsonUtility.ToJson(objectToSave);
