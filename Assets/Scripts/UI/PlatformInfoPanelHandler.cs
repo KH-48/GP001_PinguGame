@@ -8,6 +8,7 @@ public class PlatformInfoPanelHandler : MonoBehaviour
 
     public static PlatformInfoPanelHandler instance;
     [Header("UI Elements")]
+    [SerializeField] private GameObject Panel;
     [SerializeField] private TextMeshProUGUI platformIndexText;
     [SerializeField] private Dropdown platformType;
     [SerializeField] private Toggle isMovable;
@@ -62,6 +63,10 @@ public class PlatformInfoPanelHandler : MonoBehaviour
         directionToMove.value = 0;
         unitsToMove.value = 0;
         objectAttached.value = 0;
+    }
+
+    public void ActivatePanel(){
+        Panel.SetActive(true);
     }
 
     public void FillValues(int index, PlatformSettings platformInfo){
@@ -119,7 +124,7 @@ public class PlatformInfoPanelHandler : MonoBehaviour
         newSettings.SetObjectAttached((PlatformObjectIndex) objectAttached.value);
 
         GameManager.instance.CreateNewPlatform(newSettings);
-        this.gameObject.SetActive(false);
+        Panel.SetActive(false);
 
     }
 }

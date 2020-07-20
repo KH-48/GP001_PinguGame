@@ -29,14 +29,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ListenInputs();   
+    }
+
+    private void ListenInputs(){
         switch(currentGameState){
             case gameState.Controlling:
             
                 if(canMove){
-                    if(Input.GetKey(KeyCode.A) && transform.position.z < leftConstraint){ //Left
+                    if(Input.GetKey(KeyCode.LeftArrow) && transform.position.z < leftConstraint){ //Left
                         MoveTo(Direction.Left);
                     }
-                    if(Input.GetKey(KeyCode.D) && transform.position.z > rightConstraint){ //Right
+                    if(Input.GetKey(KeyCode.RightArrow) && transform.position.z > rightConstraint){ //Right
                         MoveTo(Direction.Right);
                     }
                         
@@ -57,13 +61,8 @@ public class PlayerController : MonoBehaviour
             case gameState.Result:
             break;
         }
-        
     }
 
-    public void Jump(){
-          Rb.velocity = Vector3.up * jumpTrust;
-         // jumping = true;
-    }
 
     public void MoveTo(Direction d){
 
@@ -94,6 +93,12 @@ public class PlayerController : MonoBehaviour
         currentGameState = gameState.Controlling;
         GameManager.instance.ResetLevel();
     }
+
+    public void Jump(){
+        Rb.velocity = Vector3.up * jumpTrust;
+        //jumping = true;
+    }
+
 
     public void Respawn(){
         StartCoroutine(ResetPosition());

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
-    public GameObject platformInfo;
+
     [Header("Current Mode")]
     private GameMode currentGameMode;
     private enum GameMode {Debug, Test_Load};
@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
     private List<GameObject> platformReferences = new List<GameObject>();
     [SerializeField] private int selectedPlatformIndex;
     private Vector3[] platformPositions = new Vector3[16];
-
     
 
     // Start is called before the first frame update
@@ -42,7 +41,7 @@ public class GameManager : MonoBehaviour
         
         instance = this;
         //Makes random selection of a Level Layout before Generating it
-        //HeaderLevelDetails.instance.FillDetails(new LevelSettings());
+
         LoadLevelsFromFile();
         if(currentGameMode == GameMode.Test_Load){
             //SelectRandomLevel();
@@ -60,7 +59,7 @@ public class GameManager : MonoBehaviour
                  for(int i = 0; i < platformReferences.Count; i++){
                         if(platformReferences[i] == hit.transform.gameObject){
                             Debug.Log ("Platform "+ i +" Selected");
-                            platformInfo.SetActive(true);
+                            PlatformInfoPanelHandler.instance.ActivatePanel();
                             PlatformInfoPanelHandler.instance.FillValues(i,levelSelected.layoutPlatforms[i]);
                             selectedPlatformIndex = i;
                         }
@@ -90,14 +89,6 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void ResetField(){
-        for(int i = 0; i < platformReferences.Count; i++){
-            Destroy(platformReferences[i]);
-        }
-        platformReferences.RemoveRange(0, platformReferences.Count);
-        levelSelected = null;
-    }
-
     public void SaveOnce(){
         string path = "Assets/Levels/LevelPoolTest.json";
         Debug.Log(path);
@@ -106,6 +97,7 @@ public class GameManager : MonoBehaviour
         File.WriteAllText(path, json);   
     }
 
+    
     /* Selects a level information at random from the avaiable levels
      and generates its corresponding objects on the Scene*/
     public void LoadLevelLayout(){
@@ -166,6 +158,15 @@ public class GameManager : MonoBehaviour
             Debug.Log("This level is currently Open");
         }
     }
+
+    public void ResetField(){
+        for(int i = 0; i < platformReferences.Count; i++){
+            Destroy(platformReferences[i]);
+        }
+        platformReferences.RemoveRange(0, platformReferences.Count);
+        levelSelected = null;
+    }
+
 
     public void ResetLevel(){
         LevelSettings level = levelSelected;
@@ -246,6 +247,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void StopPlatforms(){
+        for(int i = 0; i < platformReferences.Count; i++){
+            if(levelSelected.layoutPlatforms[i].IsThePlatformMovable()){
+                platformReferences[i].GetComponent<MovingPlatform>().StopMoving();
+            }
+        }
+    }
+
+    public void MovePlatforms(){
+        for(int i = 0; i < platformReferences.Count; i++){
+            if(levelSelected.layoutPlatforms[i].IsThePlatformMovable()){
+                platformReferences[i].GetComponent<MovingPlatform>().StartMoving();
+            }
+        }
+    }
+
     //////////////Getters / Setters
 
     public LevelSettings GetCurrentLevel(){
@@ -274,22 +291,6 @@ public class GameManager : MonoBehaviour
             }
         }
         return availableList.ToArray();
-    }
-
-    public void StopPlatforms(){
-        for(int i = 0; i < platformReferences.Count; i++){
-            if(levelSelected.layoutPlatforms[i].IsThePlatformMovable()){
-                platformReferences[i].GetComponent<MovingPlatform>().StopMoving();
-            }
-        }
-    }
-
-    public void MovePlatforms(){
-        for(int i = 0; i < platformReferences.Count; i++){
-            if(levelSelected.layoutPlatforms[i].IsThePlatformMovable()){
-                platformReferences[i].GetComponent<MovingPlatform>().StartMoving();
-            }
-        }
     }
 
 }
