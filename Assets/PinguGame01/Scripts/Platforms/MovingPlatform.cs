@@ -1,19 +1,28 @@
 using UnityEngine;
-
+using System.Collections.Generic;
 namespace PinguGame01
 {
-    public class MovingPlatform : Platform {
+    public class MovingPlatform : MonoBehaviour {
 
         [SerializeField] private enum PlatformState{Stopped, Moving};
         [SerializeField] private PlatformState platformState;
+        [SerializeField] private MovingPath path;
         [SerializeField] private int unitsToMove=0;
         [SerializeField] private Direction directionToMove;
+        
         [SerializeField] private float speed;
-        [SerializeField] private bool goingInReverse = false;
+
+        private bool goingInReverse = false;
         private float speedVariation=0;
         private float basePosition;
         private float targetPosition;
         private float lastTargetPosition;
+
+        [Header("Path Testing")]
+        private float[] pathPositions;
+        private Vector3 currentPosition;
+
+        private int currentPositionIndex=0;
 
         void Update(){
 
@@ -23,8 +32,15 @@ namespace PinguGame01
                 break;
 
                 case PlatformState.Moving:
-                    
-                    float step = speed * Time.deltaTime;
+                    Move();
+                break;
+            }
+
+        }
+
+        public void Move(){
+            
+             float step = speed * Time.deltaTime;
 
                     switch(directionToMove){
 
@@ -68,18 +84,59 @@ namespace PinguGame01
                             }     
                         break;
                     }
+        }
+      
+       /*Fix Algorithm*/
+        public void Move(bool mode){
 
-                break;
+            float step = speed * Time.deltaTime;
+
+            if(currentPositionIndex == path.GetPathLength()){
+                if(path.IsPathLooping()){
+                    goingInReverse = true;
+                    currentPositionIndex = path.GetPathLength()-1;
+                }else{
+                    transform.position = GetComponent<Platform>().initialPosition;
+                    currentPositionIndex = 0;
+                }
             }
 
+            if(currentPositionIndex < 0){ //looping
+                goingInReverse = false;
+                currentPositionIndex = 0;
+            }
+            switch(path.GetPathSegment(currentPositionIndex).GetDirectionToMove()){
+
+                    case Direction.Up:
+                    case Direction.Down:
+                        transform.position = Vector3.MoveTowards(
+                            transform.position,
+                            new Vector3 (pathPositions[currentPositionIndex],
+                                transform.position.y,
+                                transform.position.z),
+                                step);    
+                        break;
+
+                    case Direction.Right:
+                    case Direction.Left:
+                        transform.position = Vector3.MoveTowards(
+                            transform.position,
+                            new Vector3 (transform.position.x,
+                                transform.position.y,
+                                pathPositions[currentPositionIndex]),
+                                step);    
+                        break;
+            }
+            if(!goingInReverse){
+                currentPositionIndex+=1;
+            }else{
+                currentPositionIndex-=1;
+            }
         }
-
-        public override void SetSettings(PlatformSettings ps){
-
-            settings = ps;
+        public void SetSettings(Direction directionToMove, int unitsToMove, bool hasSpeedVariation, float speedVariation){ //add each attribute
             
-            unitsToMove = ps.GetUnitsToMove();
-            directionToMove = ps.GetDirectionToMove();
+            this.unitsToMove = unitsToMove;
+            this.directionToMove = directionToMove;
             speed = GameManager.instance.GetCurrentSpeed();
             switch(unitsToMove){ 
 
@@ -92,8 +149,8 @@ namespace PinguGame01
                     break;
             }
 
-            if(settings.HasSpeedVariation()){
-                speed = speed + (speed*(settings.GetSpeedVariation()*0.01f));
+            if(hasSpeedVariation){
+                speed = speed + (speed*(speedVariation*0.01f));
             }
             
             
@@ -120,13 +177,50 @@ namespace PinguGame01
                 break;
             }
             
-            initialPosition = transform.position;
             platformState = PlatformState.Moving;
             
         }
 
-        protected override void TriggerPlatformEvent(){
+        /*Keep developing*/
+        public void SetSettings(MovingPath path, float speedVariation){
+            
+            this.path = path;
+            speed = GameManager.instance.GetCurrentSpeed();
+            currentPosition = GetComponent<Platform>().initialPosition;
 
+            if(speedVariation > 0){
+                speed = speed + (speed*(speedVariation*0.01f));
+            }        
+
+            pathPositions = new float[path.GetPathLength()];
+
+            for(int i = 0; i < path.GetPathLength(); i++){
+                switch(path.GetPathSegment(i).GetDirectionToMove()){
+
+                    case Direction.Up:
+                        currentPosition.x += (path.GetPathSegment(i).GetUnitsToMove() * GameManager.instance.GetXOffset());
+                        pathPositions[i] = currentPosition.x;
+                    break;
+
+                    case Direction.Down:
+                        currentPosition.x -= (path.GetPathSegment(i).GetUnitsToMove() * GameManager.instance.GetXOffset());
+                        pathPositions[i] = currentPosition.x;
+                        
+                    break;
+
+                    case Direction.Right:
+                        currentPosition.z -= (path.GetPathSegment(i).GetUnitsToMove() * GameManager.instance.GetZOffset());
+                        pathPositions[i] = currentPosition.z;
+                    break;
+
+                    case Direction.Left: 
+                        currentPosition.z += (path.GetPathSegment(i).GetUnitsToMove() * GameManager.instance.GetZOffset());
+                        pathPositions[i] = currentPosition.z;     
+                    break;
+                }
+            }
+            
+            platformState = PlatformState.Moving;
         }
         
         public void StopMoving(){
