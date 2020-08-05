@@ -30,8 +30,7 @@ namespace PinguGame01
         private string[] platformTypeOptions = {"Normal","Cambia-Direccion","Ninguna"};
         private string[] directionOptions = {"Arriba","Abajo","Derecha","Izquierda"};
         private string[] unitsToMoveOptions = {"Uno","Dos","Tres"};
-        private string[] speedVariationOptions = {"10%","20%","30%","50%","80%"};
-        private string[] objectAttachedOptions = {"Ninguno"};
+        private string[] objectAttachedOptions = {"Ninguno","Roca","Morsa"};
         // Start is called before the first frame update
         void Start()
         {
