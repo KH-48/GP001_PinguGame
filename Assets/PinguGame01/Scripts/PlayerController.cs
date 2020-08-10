@@ -69,6 +69,10 @@ namespace PinguGame01
             }
         }
 
+        
+        public void ChangeDirection(Direction d){
+            currentDirection = d;
+        }
 
         public void MoveTo(Direction d){
 

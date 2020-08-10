@@ -111,6 +111,7 @@ namespace PinguGame01
             if(currentGameMode == GameMode.Debug){
                 HeaderLevelDetails.instance.FillDetails(levelSelected);
             }
+
             difficultySetting = levelSelected.difficulty;
             gameSpeedSetting = levelSelected.gameSpeed;
             currentSpeed = speedValues[(int) levelSelected.gameSpeed];
@@ -124,26 +125,25 @@ namespace PinguGame01
                 for(float column = platformsOrigin.z; column <= platformZLimit; column += platformZOffset){
 
                         platformPositions[i] = new Vector3(row, platformsOrigin.y, column);
-                
-                        
+                         
                         /*The Manager creates a platform based on the platform types's enum value, 
                         interpreting it as an index from its array of platforms*/
-                        
-                        GameObject g = Instantiate(platformPool[(int) levelSelected.GetPlatformType(i)],
-                        new Vector3(row,platformsOrigin.y,column),Quaternion.identity);
-                        g.transform.localScale = platformsScale;
-                        
-                        //NOTE: Add Object Attached (make g a parent of said object if aplicable)
+
+                        GameObject g;
+        
+                        if(levelSelected.layoutPlatforms[i].GetPlatformType() == PlatformType.None){
+                            g = Instantiate(platformPool[2],
+                            new Vector3(row,platformsOrigin.y,column),Quaternion.identity);
+                            g.transform.localScale = platformsScale;
+                        }else{
+                            g = Instantiate(platformPool[0],
+                            new Vector3(row,platformsOrigin.y,column),Quaternion.identity);
+                            g.transform.localScale = platformsScale;
+                            g.GetComponent<Platform>().SetSettings(levelSelected.layoutPlatforms[i]);
+                            g.GetComponent<Platform>().initialPosition = platformPositions[i];
+                        }   
 
                         //Set the corresponding properties of the platform specified in the config file
-                        if(levelSelected.GetPlatformType(i) == PlatformType.DirectionChanger){
-                            g.GetComponent<DirectionChangerPlatform>().SetSettings(levelSelected.GetPlatformSettings(i)); 
-                        }
-                        
-                        //Add the Moving Platform's properties to the created platform if aplicable
-                        if(levelSelected.GetPlatformSettings(i).IsThePlatformMovable()){
-                            g.AddComponent<MovingPlatform>().SetSettings(levelSelected.GetPlatformSettings(i));
-                        }
                         g.transform.parent = stage.transform; 
                         platformReferences.Add(g);
                         i++;
@@ -218,6 +218,7 @@ namespace PinguGame01
         }
 
         public void CreateNewPlatform(PlatformSettings newPlatformSettings){
+            
             if(platformReferences[selectedPlatformIndex] != null){
 
                 Vector3 position = platformPositions[selectedPlatformIndex];
@@ -225,21 +226,19 @@ namespace PinguGame01
                 
                 /*The Manager creates a platform based on the platform types's enum value, 
                     interpreting it as an index from its array of platforms*/
-                GameObject g = Instantiate(platformPool[(int) newPlatformSettings.GetPlatformType()],
-                position,Quaternion.identity);
-                g.transform.localScale = platformsScale;
 
-                    //NOTE: Add Object Attached (make g a parent of said object if aplicable)
+                GameObject g;
+                if(newPlatformSettings.GetPlatformType() == PlatformType.None){
+                    g = Instantiate(platformPool[2],position,Quaternion.identity);
+                    g.transform.localScale = platformsScale;
+                }else{
+                    g = Instantiate(platformPool[0],position,Quaternion.identity);
+                    g.transform.localScale = platformsScale;
+                    g.GetComponent<Platform>().SetSettings(newPlatformSettings);
+                }            
 
-                    //Set the corresponding properties of the platform specified in the config file
-                if(newPlatformSettings.GetPlatformType() == PlatformType.DirectionChanger){
-                    g.GetComponent<DirectionChangerPlatform>().SetSettings(newPlatformSettings); 
-                }
-                    
-                //Add the Moving Platform's properties to the created platform if aplicable
-                if(newPlatformSettings.IsThePlatformMovable()){
-                    g.AddComponent<MovingPlatform>().SetSettings(newPlatformSettings);
-                }
+                //NOTE: Add Object Attached (make g a parent of said object if aplicable)
+
                 g.transform.parent = stage.transform; 
                 platformReferences[selectedPlatformIndex] = g;
 

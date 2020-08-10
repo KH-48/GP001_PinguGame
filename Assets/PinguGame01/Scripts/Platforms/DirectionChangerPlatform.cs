@@ -4,19 +4,17 @@ using UnityEngine;
 
 namespace PinguGame01
 {
-    public class DirectionChangerPlatform : Platform
+    public class DirectionChangerPlatform : MonoBehaviour
     {
 
         [SerializeField] private Direction newDirection;
         private float orientation;
         
-        public override void SetSettings(PlatformSettings ps){
+        public void SetSettings(Direction newDirection){
             
-            settings = ps;
+            this.newDirection = newDirection;
             
-            newDirection = ps.GetDirectionToChange();
-
-            switch(newDirection){
+            switch(newDirection){ //Change all of this
 
                 case Direction.Up:
                     orientation = 0;
@@ -32,7 +30,6 @@ namespace PinguGame01
                 break;
             }   
             this.gameObject.transform.eulerAngles = new Vector3(0,orientation,0);
-            initialPosition = transform.position;
         }
 
 
@@ -42,8 +39,8 @@ namespace PinguGame01
             }
         }
 
-        protected override void TriggerPlatformEvent(){
-            PlayerController.instance.currentDirection = newDirection;
+        private void TriggerPlatformEvent(){
+            PlayerController.instance.ChangeDirection(newDirection);
             Debug.Log("Changing Direction!");
         }
     }
