@@ -1,0 +1,1541 @@
+fileFormatVersion: 2
+guid: 1da3be98b77c5df429946ab6aa30e4d3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7883446184097905558
+    second: Pringu sprites vectorizados_0
+  - first:
+      213: 8739960767335505534
+    second: Pringu sprites vectorizados_1
+  - first:
+      213: -1063328387299545290
+    second: Pringu sprites vectorizados_2
+  - first:
+      213: -188101943164525174
+    second: Pringu sprites vectorizados_3
+  - first:
+      213: -8002541268021848152
+    second: Pringu sprites vectorizados_4
+  - first:
+      213: -6693248329498594586
+    second: Pringu sprites vectorizados_5
+  - first:
+      213: -6793661939705753625
+    second: Pringu sprites vectorizados_6
+  - first:
+      213: 7528561200539669332
+    second: Pringu sprites vectorizados_7
+  - first:
+      213: -2106308131476557688
+    second: Pringu sprites vectorizados_8
+  - first:
+      213: 3544052343847430105
+    second: Pringu sprites vectorizados_9
+  - first:
+      213: -5645434019410873097
+    second: Pringu sprites vectorizados_10
+  - first:
+      213: 1579159875554571398
+    second: Pringu sprites vectorizados_11
+  - first:
+      213: 2174093902581918975
+    second: Pringu sprites vectorizados_12
+  - first:
+      213: 7677588510602294062
+    second: Pringu sprites vectorizados_13
+  - first:
+      213: -7671893272198743500
+    second: Pringu sprites vectorizados_14
+  - first:
+      213: -5437169128990749869
+    second: Pringu sprites vectorizados_15
+  - first:
+      213: -2226973131476382452
+    second: Pringu sprites vectorizados_16
+  - first:
+      213: 6116716934969583283
+    second: Pringu sprites vectorizados_17
+  - first:
+      213: 7486228287755407687
+    second: Pringu sprites vectorizados_18
+  - first:
+      213: 6392713245847278704
+    second: Pringu sprites vectorizados_19
+  - first:
+      213: -200523277988476972
+    second: Pringu sprites vectorizados_20
+  - first:
+      213: -3736474359423446640
+    second: Pringu sprites vectorizados_21
+  - first:
+      213: 8331961896798167549
+    second: Pringu sprites vectorizados_22
+  - first:
+      213: 4308147311346039679
+    second: Pringu sprites vectorizados_23
+  - first:
+      213: 4480413788692398828
+    second: Pringu sprites vectorizados_24
+  - first:
+      213: -2492527184713050896
+    second: Pringu sprites vectorizados_25
+  - first:
+      213: -6616373469879868932
+    second: Pringu sprites vectorizados_26
+  - first:
+      213: 6352220628138438172
+    second: Pringu sprites vectorizados_27
+  - first:
+      213: 3534334289206098428
+    second: Pringu sprites vectorizados_28
+  - first:
+      213: 3800014798329240300
+    second: Pringu sprites vectorizados_29
+  - first:
+      213: 5831019244064555911
+    second: Pringu sprites vectorizados_30
+  - first:
+      213: 6514325228229708927
+    second: Pringu sprites vectorizados_31
+  - first:
+      213: -5469208717303434250
+    second: Pringu sprites vectorizados_32
+  - first:
+      213: -3365591371148438805
+    second: Pringu sprites vectorizados_33
+  - first:
+      213: -3245145636458006612
+    second: Pringu sprites vectorizados_34
+  - first:
+      213: 6653538393939248221
+    second: Pringu sprites vectorizados_35
+  - first:
+      213: 1213571137910182402
+    second: Pringu sprites vectorizados_36
+  - first:
+      213: 7140254216692922455
+    second: Pringu sprites vectorizados_37
+  - first:
+      213: 951628381847977769
+    second: Pringu sprites vectorizados_38
+  - first:
+      213: -1191529329228302342
+    second: Pringu sprites vectorizados_39
+  - first:
+      213: 5035203151615447218
+    second: Pringu sprites vectorizados_40
+  - first:
+      213: 5764408742541444897
+    second: Pringu sprites vectorizados_41
+  - first:
+      213: 3364668625140291325
+    second: Pringu sprites vectorizados_42
+  - first:
+      213: -912268071809453896
+    second: Pringu sprites vectorizados_43
+  - first:
+      213: -5718077950336744289
+    second: Pringu sprites vectorizados_44
+  - first:
+      213: -8584088179307396948
+    second: Pringu sprites vectorizados_45
+  - first:
+      213: -2845888985296856114
+    second: Pringu sprites vectorizados_46
+  - first:
+      213: 7465146455711413457
+    second: Pringu sprites vectorizados_47
+  - first:
+      213: -5207279801651951578
+    second: Pringu sprites vectorizados_48
+  - first:
+      213: -5039538493846741459
+    second: Pringu sprites vectorizados_49
+  - first:
+      213: -5809749537907807185
+    second: Pringu sprites vectorizados_50
+  - first:
+      213: 5134364971887026035
+    second: Pringu sprites vectorizados_51
+  - first:
+      213: -10962297980125316
+    second: Pringu sprites vectorizados_52
+  - first:
+      213: -51207659450151714
+    second: Pringu sprites vectorizados_53
+  - first:
+      213: 2458099082003236651
+    second: Pringu sprites vectorizados_54
+  - first:
+      213: -2367527469051723374
+    second: Pringu sprites vectorizados_55
+  - first:
+      213: 2987616994637179650
+    second: Pringu sprites vectorizados_56
+  - first:
+      213: 2364519549833967508
+    second: Pringu sprites vectorizados_57
+  - first:
+      213: -2617643385134937003
+    second: Pringu sprites vectorizados_58
+  - first:
+      213: -3345359300648383925
+    second: Pringu sprites vectorizados_59
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_0
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 1865
+        width: 383
+        height: 543
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f778d2ada72324dad1ce89b4a7901b
+      internalID: -7883446184097905558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_1
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 1870
+        width: 353
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5687df0e71f5e5a44b01e0a21b9df3d7
+      internalID: 8739960767335505534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_2
+      rect:
+        serializedVersion: 2
+        x: 1483
+        y: 2348
+        width: 20
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96de37ff84c732f498b218691c75523b
+      internalID: -1063328387299545290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_3
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 2331
+        width: 112
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526ce8c8ff72caa4a9003f09148b59a0
+      internalID: -188101943164525174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_4
+      rect:
+        serializedVersion: 2
+        x: 1541
+        y: 2374
+        width: 67
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 697d00f8c0eeff249bbea637532196c1
+      internalID: -8002541268021848152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_5
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 2370
+        width: 13
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db80f87c15362b848a787c8a9b74e09c
+      internalID: -6693248329498594586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_6
+      rect:
+        serializedVersion: 2
+        x: 1634
+        y: 2341
+        width: 67
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 076f6345aac623746aed595115c750ae
+      internalID: -6793661939705753625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_7
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 2362
+        width: 47
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e1f2fb4f5243cc47859577340d07b46
+      internalID: 7528561200539669332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_8
+      rect:
+        serializedVersion: 2
+        x: 1707
+        y: 2337
+        width: 17
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f80ee1b0668571a479745e7a22b80918
+      internalID: -2106308131476557688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_9
+      rect:
+        serializedVersion: 2
+        x: 1723
+        y: 2337
+        width: 13
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf372175925b45c428b00fd888766364
+      internalID: 3544052343847430105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_10
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 1946
+        width: 384
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d149cd98216fda8418d0ff58b2c82ec2
+      internalID: -5645434019410873097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_11
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 2319
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d93ab14780e86449f3fbeb044a0f4c
+      internalID: 1579159875554571398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_12
+      rect:
+        serializedVersion: 2
+        x: 1741
+        y: 2264
+        width: 99
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86d09d92df1630a4881441980ce288ef
+      internalID: 2174093902581918975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_13
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 1865
+        width: 401
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56ee5b4ed10bcf84d8ce8ad8268f3f2f
+      internalID: 7677588510602294062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_14
+      rect:
+        serializedVersion: 2
+        x: 1756
+        y: 2189
+        width: 35
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2b47ed80a95d546b72327a227dcf31
+      internalID: -7671893272198743500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_15
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 2194
+        width: 28
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610d245fe88232f45ba353c05b241094
+      internalID: -5437169128990749869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_16
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1347
+        width: 461
+        height: 417
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d2a48540bd12f44a373f0a2c1c5364
+      internalID: -2226973131476382452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_17
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 1343
+        width: 445
+        height: 453
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95355147fe24c1646b06b2d427f52860
+      internalID: 6116716934969583283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_18
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 1729
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b78eed343640545a10a706d1d991b6
+      internalID: 7486228287755407687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_19
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 1339
+        width: 455
+        height: 367
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3be4542a30de723419d9e793a6d7832c
+      internalID: 6392713245847278704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_20
+      rect:
+        serializedVersion: 2
+        x: 1964
+        y: 1568
+        width: 288
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c0cfef7d44d0844ae809475988df3a
+      internalID: -200523277988476972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_21
+      rect:
+        serializedVersion: 2
+        x: 2289
+        y: 1652
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feefa78bb07ee9a4486a39f8278ce73c
+      internalID: -3736474359423446640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_22
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 1397
+        width: 88
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10bd31cdc258c30418dca3951183de56
+      internalID: 8331961896798167549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_23
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 1354
+        width: 83
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 495a079cc8661c849b4b6f1dda300955
+      internalID: 4308147311346039679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_24
+      rect:
+        serializedVersion: 2
+        x: 1881
+        y: 1302
+        width: 234
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4888f0b599616604cbcc51a10fd28711
+      internalID: 4480413788692398828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_25
+      rect:
+        serializedVersion: 2
+        x: 1967
+        y: 1354
+        width: 241
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf6feb7f9967544fba300690e1c0997
+      internalID: -2492527184713050896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_26
+      rect:
+        serializedVersion: 2
+        x: 2011
+        y: 1448
+        width: 274
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f1e843202af84a42ac3495be681d8ae
+      internalID: -6616373469879868932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_27
+      rect:
+        serializedVersion: 2
+        x: 2108
+        y: 1434
+        width: 130
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7044a7da4b34f949a955a6522a98834
+      internalID: 6352220628138438172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_28
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 1477
+        width: 140
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2152a2ae14332448b4822929aec0be
+      internalID: 3534334289206098428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_29
+      rect:
+        serializedVersion: 2
+        x: 2260
+        y: 1360
+        width: 82
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d509a5ad378ac724fb35b4eabbfb7b5a
+      internalID: 3800014798329240300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_30
+      rect:
+        serializedVersion: 2
+        x: 2270
+        y: 1336
+        width: 100
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09564dddabbc6044da99e5f263b8667a
+      internalID: 5831019244064555911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_31
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 1303
+        width: 76
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e48b6041f9ba24a90052e6b7868ed8
+      internalID: 6514325228229708927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_32
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 1323
+        width: 80
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd6fee90f3aea2849b58b35e0a73a0c0
+      internalID: -5469208717303434250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_33
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 1301
+        width: 291
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22672882b83ccc04494325ca2dc945f7
+      internalID: -3365591371148438805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_34
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 1284
+        width: 174
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 790012af540f02043ba7f2554e344955
+      internalID: -3245145636458006612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_35
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 1260
+        width: 100
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e9d569c247da84cbe1b9a0e7724ee9
+      internalID: 6653538393939248221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_36
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1326
+        width: 91
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60305f7e9e04d9f49a5f46981a23a806
+      internalID: 1213571137910182402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_37
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 1308
+        width: 109
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78d1ae4df68129240b487934983e3c7a
+      internalID: 7140254216692922455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_38
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1284
+        width: 46
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7ab22bcf5ee8e6488ecef49e9ed2c0c
+      internalID: 951628381847977769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_39
+      rect:
+        serializedVersion: 2
+        x: 1733
+        y: 1264
+        width: 40
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e969a7e0668c3449b54889a6d3ad96
+      internalID: -1191529329228302342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_40
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1336
+        width: 116
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba35c8e8a82c2a04dbef53d412516005
+      internalID: 5035203151615447218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_41
+      rect:
+        serializedVersion: 2
+        x: 1497
+        y: 1243
+        width: 203
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aee767e391bc0342a26bd97736cb676
+      internalID: 5764408742541444897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_42
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 1226
+        width: 160
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 024659bbbdf3217448a127a53b54e648
+      internalID: 3364668625140291325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_43
+      rect:
+        serializedVersion: 2
+        x: 2152
+        y: 1258
+        width: 217
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4328f7824182a74187ee0106c44dc71
+      internalID: -912268071809453896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_44
+      rect:
+        serializedVersion: 2
+        x: 2173
+        y: 1225
+        width: 190
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d57f01ee631a4e4d8df518c88f2c75c
+      internalID: -5718077950336744289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_45
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 617
+        width: 448
+        height: 602
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7965c4a925dec794d86a51a64998d65d
+      internalID: -8584088179307396948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_46
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 717
+        width: 500
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b8536fbf0645f4195978e761005d79
+      internalID: -2845888985296856114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_47
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 731
+        width: 577
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16602aa708b189543b4c9550c588d4aa
+      internalID: 7465146455711413457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_48
+      rect:
+        serializedVersion: 2
+        x: 1959
+        y: 677
+        width: 440
+        height: 365
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8595d6a40ae831d48ac06e817464bde4
+      internalID: -5207279801651951578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_49
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 1015
+        width: 30
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0856246b294d6d34e9a38a61c5cce836
+      internalID: -5039538493846741459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_50
+      rect:
+        serializedVersion: 2
+        x: 2121
+        y: 1011
+        width: 34
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69cf27a3df550f45a0fbc383347d743
+      internalID: -5809749537907807185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_51
+      rect:
+        serializedVersion: 2
+        x: 2241
+        y: 1022
+        width: 19
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2ab339f8edec54fac852123734bc2a
+      internalID: 5134364971887026035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_52
+      rect:
+        serializedVersion: 2
+        x: 2258
+        y: 1015
+        width: 14
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48bc8d1f521cc03469fe2ff86f791921
+      internalID: -10962297980125316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_53
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 150
+        width: 526
+        height: 373
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4e0f8f77e487a349aaaa162eab9b6fd
+      internalID: -51207659450151714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_54
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 463
+        width: 43
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e991f97355f3f64d985f5536f322d24
+      internalID: 2458099082003236651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_55
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 164
+        width: 539
+        height: 366
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 040e5ab27467a6b488647def3294e2c9
+      internalID: -2367527469051723374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_56
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 491
+        width: 171
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d67e62c70f77a468fdb58706214480
+      internalID: 2987616994637179650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_57
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 89
+        width: 426
+        height: 602
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806a45a18b29eab4db35b8207d5e1e22
+      internalID: 2364519549833967508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_58
+      rect:
+        serializedVersion: 2
+        x: 2051
+        y: 125
+        width: 391
+        height: 541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad59a39913f08c642b5048fc1b53e24c
+      internalID: -2617643385134937003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pringu sprites vectorizados_59
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 237
+        width: 93
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92193ebb47b53f1489a0838edf35b8c5
+      internalID: -3345359300648383925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8fb46af31354ee04b871a3fd2945a7c9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
