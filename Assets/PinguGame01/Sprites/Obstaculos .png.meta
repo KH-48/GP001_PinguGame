@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 4f799b8530f560f4ca118f48d8ffb58f
+guid: 82fd7162122401048be69052470e9ab9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8874513062138103923
-    second: Obstaculos (placeholders)_0
+      213: -4452555074931417770
+    second: Obstaculos _0
   - first:
-      213: 8817346270516355401
-    second: Obstaculos (placeholders)_1
+      213: 8377368352041333610
+    second: Obstaculos _1
   - first:
-      213: 875076736355058739
-    second: Obstaculos (placeholders)_2
+      213: -4379603979947277999
+    second: Obstaculos _2
+  - first:
+      213: -4202545662199274431
+    second: Obstaculos _3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -93,13 +96,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Obstaculos (placeholders)_0
+      name: Obstaculos _0
       rect:
         serializedVersion: 2
-        x: 89
-        y: 1647
-        width: 468
-        height: 313
+        x: 812
+        y: 1633
+        width: 306
+        height: 309
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -107,20 +110,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dc097efef645d940a56fa26873aa96f
-      internalID: -8874513062138103923
+      spriteID: 2d3eb6deda7435643b57e78950fea333
+      internalID: -4452555074931417770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Obstaculos (placeholders)_1
+      name: Obstaculos _1
       rect:
         serializedVersion: 2
-        x: 787
-        y: 1629
-        width: 332
-        height: 313
+        x: 1311
+        y: 1603
+        width: 544
+        height: 365
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b7882ffba7d7924b99333707e1af154
-      internalID: 8817346270516355401
+      spriteID: d46f50d57c565ec4291a2800321cc356
+      internalID: 8377368352041333610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Obstaculos (placeholders)_2
+      name: Obstaculos _2
       rect:
         serializedVersion: 2
-        x: 1359
-        y: 1618
-        width: 494
-        height: 333
+        x: 133
+        y: 1229
+        width: 465
+        height: 368
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,8 +152,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6f36403fc3a014458543ffae9b1f872
-      internalID: 875076736355058739
+      spriteID: 942fa96831516514eb13d7d9d5a2a6f6
+      internalID: -4379603979947277999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstaculos _3
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 1246
+        width: 310
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b726db979aece41b14ce07e2d5e35b
+      internalID: -4202545662199274431
       vertices: []
       indices: 
       edges: []
@@ -158,7 +182,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ab4ddce8d27984d4ab8ddf3eed79df06
+    spriteID: 7f82796509b9bce429789a6777182551
     internalID: 0
     vertices: []
     indices: 
